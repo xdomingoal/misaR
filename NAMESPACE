@@ -1,0 +1,9 @@
+
+useDynLib("misaR", .registration = TRUE)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)
+
+importFrom("stats", "cor", "dist", "na.omit")
+importFrom("RMySQL", "MySQL")
+
+export(inSourceAnnotation)

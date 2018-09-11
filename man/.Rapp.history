@@ -1,0 +1,116 @@
+source("/Users/xavidomingoalmenara/Desktop/osd/man/plot.OSDres.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/osd.Rd")
+data(gcms1)
+library(osd)
+resolution <- osd(D=gcms1, k=3, res.method="ica.osd")
+data(gcms1)
+resolution <- osd(D=gcms1, k=3, res.method="ica.osd")
+plot(resolution)
+plot(resolution, type="eic")
+plot(resolution, type="tic")
+plot(resolution, type="eic")
+plot(resolution, type="tic")
+plot(resolution, type="eic")
+plot(resolution, type="s")
+plot(resolution, type="s",1)
+plot(resolution, type="s",2)
+plot(resolution, type="s",3)
+plot(resolution, type="s",1)
+plot(resolution, type="s",2)
+plot(resolution, type="s",3)
+?plot
+help(package="osd")
+source("/Users/xavidomingoalmenara/Desktop/R/R Packages/OSD/V2_0_0/PACKAGE/man/osd.Rd")
+source("/Users/xavidomingoalmenara/Desktop/PACKAGE/man/plot.OSDres.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/gcms1.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/osd.Rd")
+#load GC-MS sample data, containing three different metabolites +#
+appearing in co-elution.
+osd(D, k, y.profile, res.method = c("ica.osd", "osd", "icr", "mcr"), +#
+comp.coef = 2, noise.thr = 0.01)
+osd(D, k, y.profile, res.method = c("ica.osd", "osd", "icr", "mcr"), +
+)
+u <- c(1,2+
+,3)
+u <- c(1,2
+3)
+u <- c(1,2,+
+3)
+?JADE
+library(JADE)
+JADE
+source("/Users/xavidomingoalmenara/Desktop/osd/man/plotOSDres.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/ref.spects.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/osd.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/plotOSDres.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/osd.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/plotOSDres.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/osd.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/ref.spects.Rd")
+source("/Users/xavidomingoalmenara/Desktop/osd/man/osd.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/setSoftPar.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/getFactorList.Rd")
+library(erah)
+source("/Users/xavidomingoalmenara/Desktop/erah/man/setAlPar.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/newExp.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/mslib.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/setAlPar.Rd")
+load.xml <- function(filename)#
+{	#
+	p <- library(mzR, logical.return=T)#
+    if (!p){        #
+		msg <- c("mzR is not installed. eRah can operate withouth mzR, unless you want to process .mzXML files. To install the mzR package, please visit its bioconductor website: http://bioconductor.org/packages/release/bioc/html/mzR.html#
+Or, alternatively, execute the following:#
+#
+	## try http:// if https:// URLs are not supported #
+	source('https://bioconductor.org/biocLite.R')#
+	biocLite('mzR')")#
+    warning(msg)   #
+    }         #
+	xmlO <- openMSfile(filename)#
+	metadata <- runInfo(xmlO)#
+	scans <- metadata$scanCount#
+	lowMZ <- round(metadata$lowMz+0.5)#
+	highMZ <- round(metadata$highMz+0.5)#
+	StartTime <- metadata$dStartTime#
+	ScansPerSecond <- 1/((metadata$dEndTime - metadata$dStartTime)/metadata$scanCount)#
+	raw.data <- get3Dmap(object=xmlO, scans=1:scans, lowMz=lowMZ, highMz=highMZ, resMz=1)#
+	sampleRD <- new("RawDataParameters", data = raw.data, min.mz = lowMZ, max.mz = highMZ, start.time = StartTime, mz.resolution = 1, scans.per.second=ScansPerSecond)#
+	sampleRD	#
+}
+source("/Users/xavidomingoalmenara/Desktop/erah/man/metaData.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/phenoData.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/findComp.Rd")
+library(erah)
+source("/Users/xavidomingoalmenara/Desktop/erah/man/newExp.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/deconvolveComp.Rd")
+Sys.which("pdflatex")
+Sys.which("PATH")
+Sys.setenv(PATH=paste(Sys.getenv("PATH"),"/usr/texbin",sep=":"))
+Sys.which("PATH")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/MetaboSet-class.Rd")
+library(erah)
+show.MetaboSet
+erah:::show.MetaboSet
+ex
+library(JADE)
+help(package="JADE")
+show.Metaboset
+show
+showMethods("show")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/show.phenoData.Rd")
+source("/Users/xavidomingoalmenara/Desktop/erah/man/expClasses.Rd")
+source("/Users/xavidomingo/Desktop/erah/man/export2MSP.Rd")
+source("/Users/xavidomingo/Desktop/erah/man/plotAlign.Rd")
+source("/Users/xavidomingo/Desktop/erah/man/expClasses.Rd")
+source("/Users/xavidomingo/Desktop/erah/man/alignComp.Rd")
+help(package="erah")
+citation
+citation("MASS")
+citation("erah")
+help(package="erah")
+source("/Users/xavidomingo/Desktop/erah/man/export2CEF.Rd")
+?importMSP
+library(erah)
+?importMSP
+citation("erah")

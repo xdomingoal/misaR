@@ -1,0 +1,390 @@
+citation
+cite
+cite("JADE")
+citatio("JADE")
+citation("JADE")
+source("/Users/xavidomingoalmenara/Desktop/erah/R/erah.R")
+source("/Users/xavidomingoalmenara/Desktop/erah/R/zzz.R")
+library(erah)
+str(mslib)
+str(mslib,2)
+str(mslib@database,2)
+str(mslib@database,1)
+ms1 <- data(mslib)
+str(ms1,1)
+str(ms1,2)
+ms1
+?data
+source("/Users/xavidomingoalmenara/Desktop/erah/R/erah.R")
+?plot
+colors()
+?colors
+source("/Users/xavidomingoalmenara/Desktop/erah/R/plotting.R")
+source("/Users/xavidomingoalmenara/Desktop/erah/R/erah.R")
+globalVariables("mslib")
+source("/Users/xavidomingoalmenara/Desktop/erah/R/alignment.R")
+Data
+source("/Users/xavidomingoalmenara/Desktop/erah/R/erah.R")
+ExpInfo
+object@MetaData@Instrumental
+source("/Users/xavidomingoalmenara/Desktop/erah/R/processing.R")
+source("/Users/xavidomingoalmenara/Desktop/erah/R/file.R")
+?load
+source("/Users/xavidomingoalmenara/Desktop/erah/R/file.R")
+source("/Users/xavidomingo/Desktop/erah/R/processing.R")
+source("/Users/xavidomingo/Desktop/erah/R/preprocessing.R")
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+source("/Users/xavidomingo/Desktop/erah/R/processing.R")
+sum(1)
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+msg <- c("mzR is not installed. eRah can operate withouth mzR, unless you want to process .mzXML files (as in this case). To install the mzR package and be able to read mzXML files, please visit its bioconductor website: http://bioconductor.org/packages/release/bioc/html/mzR.html#
+Or, alternatively, execute the following R code:#
+#
+		## try http:// if https:// URLs are not supported #
+		source('https://bioconductor.org/biocLite.R')#
+		biocLite('mzR')")#
+    warning(msg)
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+require2 <- require
+p <- require2(mzR, quietly = TRUE)
+p
+!p
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+requireNamespace("mzR")
+requiere(mzR)
+require(mzR)
+require("mzR")
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+msg <- c("mzR is not installed. eRah can operate withouth mzR, unless you want to process .mzXML files (as in this case). To install the mzR package and be able to read mzXML files, please visit its bioconductor website: http://bioconductor.org/packages/release/bioc/html/mzR.html#
+		Or, alternatively, execute the following R code:#
+			## try http:// if https:// URLs are not supported #
+			source('https://bioconductor.org/biocLite.R')#
+			biocLite('mzR')")#
+		    warning(msg)
+msg <- c("mzR is not installed. eRah can operate withouth mzR, unless you want to process .mzXML files (as in this case). To install the mzR package and be able to read mzXML files, please visit its bioconductor website: http://bioconductor.org/packages/release/bioc/html/mzR.html#
+Or, alternatively, execute the following R code:#
+			## try http:// if https:// URLs are not supported #
+			source('https://bioconductor.org/biocLite.R')#
+			biocLite('mzR')")#
+		    warning(msg)
+load.xml <- function(filename)#
+{	#
+	if (requireNamespace("mzR", quietly = TRUE)) {#
+	  	xmlO <- mzR::openMSfile(filename)#
+		metadata <- mzR::runInfo(xmlO)#
+		scans <- metadata$scanCount#
+		lowMZ <- round(metadata$lowMz+0.5)#
+		highMZ <- round(metadata$highMz+0.5)#
+		StartTime <- metadata$dStartTime#
+		ScansPerSecond <- 1/((metadata$dEndTime - metadata$dStartTime)/metadata$scanCount)#
+		raw.data <- mzR::get3Dmap(object=xmlO, scans=1:scans, lowMz=lowMZ, highMz=highMZ, resMz=1)#
+		sampleRD <- new("RawDataParameters", data = raw.data, min.mz = lowMZ, max.mz = highMZ, start.time = StartTime, mz.resolution = 1, scans.per.second=ScansPerSecond)#
+		return(sampleRD)#
+   } else {#
+		msg <- c("mzR is not installed. eRah can operate withouth mzR, unless you want to process .mzXML files (as in this case). To install the mzR package and be able to read mzXML files, please visit its bioconductor website: http://bioconductor.org/packages/release/bioc/html/mzR.html#
+Or, alternatively, execute the following R code:#
+		## try http:// if https:// URLs are not supported #
+		source('https://bioconductor.org/biocLite.R')#
+		biocLite('mzR')")#
+		warning(msg)   #
+#
+   }#
+}
+source("/Users/xavidomingo/Desktop/erah/R/zzz.R")
+msg <- c("Welcome to eRah. This is a early release of eRah. For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/")
+cat(msg)
+msg <- c("Welcome to eRah. This is a early release of eRah. For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	alsoo#
+	")#
+    cat(msg)
+erahV <- utils::packageVersion("erah")
+erahV
+msg <- c("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/
+erahV <- utils::packageVersion("erah")        #
+	msg <- c("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	")#
+    cat(msg)
+paste(c("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	"))
+msg <- paste(c("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	"))#
+    cat(msg)
+erahV
+paste("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	")
+paste("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	", sep="")
+msg <- paste("Welcome to eRah. This is a early release of eRah V(",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/#
+	", sep="")#
+    cat(msg)
+library(mzR)
+msg <- paste("Welcome to eRah. This is a early release of eRah (V",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/. Describe your problem and include the output of sessionInfo().", sep="")#
+    cat(msg)
+source("/Users/xavidomingo/Desktop/erah/R/zzz.R")
+source("/Users/xavidomingo/Desktop/erah/R/processing.R")
+source("/Users/xavidomingo/Desktop/erah/R/preprocessing.R")
+source("/Users/xavidomingo/Desktop/erah/R/zzz.R")
+msg <- paste("Welcome to eRah. This is a early release of eRah (V",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/. Describe your problem and include the output of sessionInfo(). \n \n NOTE OF ATTENTION: eRah is currently not compatible with Waters equipment. This is due that Waters chromatograms seem to be downsampled when converted to NCDF, mzXML or mzML files.", sep="")
+erahV <- utils::packageVersion("erah")
+msg <- paste("Welcome to eRah. This is a early release of eRah (V",erahV,"). For bugs, problems and issues, please use the eRah forum at: http://erah.lefora.com/. Describe your problem and include the output of sessionInfo(). \n \n NOTE OF ATTENTION: eRah is currently not compatible with Waters equipment. This is due that Waters chromatograms seem to be downsampled when converted to NCDF, mzXML or mzML files.", sep="")
+packageStartupMessage(msg)
+source("/Users/xavidomingo/Desktop/erah/R/support.R")
+source("/Users/xavidomingo/Desktop/erah/R/zzz.R")
+source("/Users/xavidomingo/Desktop/erah/R/processing.R")
+source("/Users/xavidomingo/Desktop/erah/R/missingCompRecovery.R")
+erah:::avoid.processing
+35-(35-1)
+35-35-1
+pre.process
+erah:::pre.process
+getC.rq
+source("/Users/xavidomingo/Desktop/erah/R/zzz.R")
+?compareVersion
+currVersion <- utils::packageVersion("erah")
+currVersion
+data <- try(XML::xmlParse("http://cran.r-project.org/package=erah", isHTML=T), silent=T)
+data
+xml_data <- XML::xmlToList(data)
+cranVersion <- xml_data$body$table[[1]][[3]]
+cranVersion
+utils::compareVersion(cranVersion, currVersion)
+utils::packageVersion("erah")
+as.character(utils::packageVersion("erah"))
+source("/Users/xavidomingo/Desktop/erah/R/MSimport.R")
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+source("/Users/xavidomingo/Desktop/erah/R/MSexport.R")
+source("/Users/xavidomingo/Desktop/erah/R/MSimport.R")
+source("/Users/xavidomingo/Desktop/erah/R/processing.R")
+?suppressMessages
+suppressMessages(a <- 2)
+getwd()
+filename <- "/Users/xavidomingo/Desktop/eRah_TEST/exp/pcosXML/CTRL/CON_BASA_567795_50.mzXML"
+if (requireNamespace("mzR", quietly = TRUE)) {#
+        xmlO <- mzR::openMSfile(filename)#
+        metadata <- mzR::runInfo(xmlO)#
+        scans <- 1:metadata$scanCount#
+        lowMZ <- metadata$lowMz#
+        highMZ <- metadata$highMz
+requireNamespace("mzR", quietly = TRUE)
+requireNamespace("mzR2", quietly = TRUE)
+xmlO <- mzR::openMSfile(filename)#
+        metadata <- mzR::runInfo(xmlO)#
+        scans <- 1:metadata$scanCount#
+        lowMZ <- metadata$lowMz#
+        highMZ <- metadata$highMz#
+        if(lowMZ==0 | highMZ==0 | scans[2]==0)#
+        {#
+        	peakLst <- mzR::peaks(xmlO)#
+        	mzVct <- unlist(lapply(peakLst, function(x) x[,1]))#
+        	lowMZ <- min(mzVct, na.rm=T)#
+        	highMZ <- max(mzVct, na.rm=T)#
+        	scans <- which(unlist(lapply(peakLst, function(x) nrow(x)))!=0)#
+        }#
+        lowMZ <- round(lowMZ + 0.5)#
+        highMZ <- round(highMZ + 0.5)#
+        StartTime <- metadata$dStartTime#
+        ScansPerSecond <- 1/((metadata$dEndTime - metadata$dStartTime)/metadata$scanCount)#
+        raw.data <- mzR::get3Dmap(object = xmlO, scans = scans, lowMz = lowMZ, highMz = highMZ, resMz = 1)
+suppressMessages(raw.data <- mzR::get3Dmap(object = xmlO, scans = scans, lowMz = lowMZ, highMz = highMZ, resMz = 1))
+?suppressMessages
+a <- suppressMessages(raw.data <- mzR::get3Dmap(object = xmlO, scans = scans, lowMz = lowMZ, highMz = highMZ, resMz = 1))
+log <- capture.output(raw.data <- mzR::get3Dmap(object = xmlO, scans = scans, lowMz = lowMZ, highMz = highMZ, resMz = 1))
+rm(raw.data)
+raw.data
+log <- capture.output(raw.data <- mzR::get3Dmap(object = xmlO, scans = scans, lowMz = lowMZ, highMz = highMZ, resMz = 1))
+raw.data[1,1]
+raw.data[1,1:10]
+source("/Users/xavidomingo/Desktop/erah/R/file.R")
+?capture.output
+?utils
+source("/Users/xavidomingo/Desktop/erah/R/zzz.R")
+source("/Users/xavidomingo/Desktop/erah/R/erah.R")
+source("/Users/xavidomingo/Google Drive/Xavi-server/Packages/hmdbr/R/zzz.R")
+msg <- paste("Welcome to HMDB for R!!", sep="")
+packageStartupMessage(msg)
+source("/Users/xavidomingo/Google Drive/Xavi-server/Packages/hmdbr/R/zzz.R")
+data(mu)
+source("/Users/xavidomingo/Google Drive/Xavi-server/Packages/hmdbr/R/zzz.R")
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/tXCMS.R")
+sessionInfo()$otherPkgs$XCMSOnline$Version
+sessionInfo()$otherPkgs$txcmso$Version
+sessionInfo
+sessionInfo()
+packageVersion('txcmso')
+50?5
+50/5
+100/5
+1/5
+2/5
+3/5
+4/5
+5/5
+6/5
+7/5
+length(listFiles)
+finalVar <- 342
+pBarValue <- pBarValue + 1
+pBarValue <- 1
+pBarValue <- pBarValue + 1
+finalVar/pBarValue
+pBarValue/finalVar
+PerCentStatus <- 100*trunc(pBarValue/finalVar)
+PerCetnStatus
+PerCentStatus
+PerCentStatus <- 100*pBarValue/finalVar
+5/5
+10/5
+trunc(PerCentStatus)/5 %in% c(1,2,3,4,5,6,7,8,9,10)
+trunc(PerCentStatus)/5
+1.2/5
+(PerCentStatus/5) %in% c(1,2,3,4,5,6,7,8,9,10)
+if((PerCentStatus/5) %in% c(1,2,3,4,5,6,7,8,9,10)) cat((PerCentStatus/5))
+for(k in 1:finalVar)#
+	{#
+		PerCentStatus <- 100*pBarValue/finalVar#
+		if((PerCentStatus/5) %in% c(1,2,3,4,5,6,7,8,9,10)) cat((PerCentStatus/5))#
+		pBarValue <- pBarValue + 1#
+	}
+finalVar
+pBarValue
+100*pBarValue/finalVar
+(PerCentStatus/5)
+pBarValue <- 1#
+	for(k in 1:finalVar)#
+	{#
+		PerCentStatus <- 100*pBarValue/finalVar#
+		if((PerCentStatus/5) %in% c(1:10)) cat((PerCentStatus/5))#
+		pBarValue <- pBarValue + 1#
+	}
+PerCentStatus
+(PerCentStatus/5)
+5.6/5
+pBarProgValue <- c(1:10)
+pBarProgValue <- seq(1,100,5)
+pBarProgValue
+pBarProgValue <- seq(0,100,5)
+pBarProgValue
+pBarProgValue[pBarValue]
+pBarValue <- 1
+pBarProgValue[pBarValue]
+PerCentStatus
+pBarValue <- 1#
+	pBarProgValue <- seq(0,100,5)#
+	for(k in 1:finalVar)#
+	{#
+		PerCentStatus <- 100*pBarValue/finalVar#
+		if(PerCentStatus>pBarProgValue[pBarValue]){#
+				cat(pBarProgValue[pBarValue])#
+					pBarValue <- pBarValue + 1#
+		}#
+	}
+pBarValue <- 1#
+	pBarProgValue <- seq(0,100,5)#
+	pBarIterValue <- 1#
+	for(k in 1:finalVar)#
+	{#
+		PerCentStatus <- 100*pBarIterValue/finalVar#
+		if(PerCentStatus>pBarProgValue[pBarValue]){#
+				cat(pBarProgValue[pBarValue])#
+					pBarValue <- pBarValue + 1#
+		}#
+		pBarIterValue <- pBarIterValue  + 1#
+	}
+pBarValue <- 1#
+	pBarProgValue <- seq(0,100,5)#
+	pBarIterValue <- 1#
+	for(k in 1:finalVar)#
+	{#
+		PerCentStatus <- 100*pBarIterValue/finalVar#
+		if(PerCentStatus>pBarProgValue[pBarValue]){#
+				cat(pBarProgValue[pBarValue], '\t')#
+					pBarValue <- pBarValue + 1#
+		}#
+		pBarIterValue <- pBarIterValue  + 1#
+	}
+library(mzR)
+require(XCMSOnline)
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/processing.R")
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/tXCMS.R")
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/processing.R")
+newExp
+sample.name <- 5129-A.mzML
+sample.name <- "5129-A.mzML"
+sample.name
+out.s <- strsplit(sample.name, "/")[[1]]
+out.s
+strsplit(out.s[length(out.s)], "\\.")[[1]][1]
+strsplit(sample.name[length(sample.name)], "\\.")[[1]][1]
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/tXCMS.R")
+DBI::dbGetQuery
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/tXCMS.R")
+DB_USER <- 'xcmsonline'#
+	DB_PASS <- 'xcmsonline1'#
+	DB_SERVER <- 'xcmsonline-db2'#
+	DB_NAME <- 'xcmsonlineB'#
+	JOBID <- 1129741#
+	require(RMySQL)
+WHERE FK_parameterid=(SELECT FK_parameterid FROM jobs WHERE jobid=", JOBID, ");", sep = "")
+drv <- RMySQL::MySQL()
+con <- RMySQL::dbConnect(drv, user = DB_USER, password = DB_PASS, host = DB_SERVER, dbname = DB_NAME)
+query <- paste("SELECT * FROM PARAM_stored_values
+LEFT JOIN PARAM_options ON PARAM_options.optionid=PARAM_stored_values.FK_optionid
+WHERE FK_parameterid=(SELECT FK_parameterid FROM jobs WHERE jobid=", JOBID, ");", sep = "")
+res <- DBI::dbGetQuery(con, query)
+res
+query <- paste("SELECT * FROM PARAM_stored_values#
+LEFT JOIN PARAM_options ON PARAM_options.optionid=PARAM_stored_values.FK_optionid#
+WHERE FK_parameterid=(SELECT FK_parameterid FROM jobs WHERE jobid='", JOBID, "');", sep = "")
+res <- DBI::dbGetQuery(con, query)
+res
+query <- paste0("SELECT FK_parameterid FROM jobs WHERE jobid=", JOBID)
+res <- DBI::dbGetQuery(con, query)
+srt(res,1)
+str(res)
+res
+paramID <- res$FK_parameterid
+paramID
+query <- paste0("SELECT * FROM PARAM_stored_values LEFT JOIN PARAM_options ON PARAM_options.optionid=PARAM_stored_values.FK_optionid WHERE FK_parameterid=",paramID)
+query
+query <- paste0("SELECT * FROM PARAM_stored_values LEFT JOIN PARAM_options ON PARAM_options.optionid=PARAM_stored_values.FK_optionid WHERE FK_parameterid=",paramID)
+res <- DBI::dbGetQuery(con, query)
+res
+JOBID <- 1129676
+query <- paste0("SELECT FK_parameterid FROM jobs WHERE jobid=", JOBID)#
+res <- DBI::dbGetQuery(con, query)#
+paramID <- res$FK_parameterid#
+#
+query <- paste0("SELECT * FROM PARAM_stored_values LEFT JOIN PARAM_options ON PARAM_options.optionid=PARAM_stored_values.FK_optionid WHERE FK_parameterid=",paramID)#
+res <- DBI::dbGetQuery(con, query)
+res
+str(res)
+# JOBID <- 1129741
+JOBID <- 1129741
+query <- paste0("SELECT FK_parameterid FROM jobs WHERE jobid=", JOBID)#
+res <- DBI::dbGetQuery(con, query)#
+paramID <- res$FK_parameterid#
+#
+query <- paste0("SELECT * FROM PARAM_stored_values LEFT JOIN PARAM_options ON PARAM_options.optionid=PARAM_stored_values.FK_optionid WHERE FK_parameterid=",paramID)#
+res <- DBI::dbGetQuery(con, query)
+str(res)
+res
+str(res)
+XCMSOnline::DB.update.statusnote
+XCMSOnline:::DB.update.statusnote
+XCMSOnline::DB.update.progress
+DB_name
+DB_Name
+DB_NAME
+source("/Users/xavidomingo/Desktop/online-packages/txcmso/R/tXCMS.R")
+library(txcmso)
+initialize_txcmso()
+DB_USER <- 'xcmsonline'#
+	DB_PASS <- 'xcmsonline1'#
+	DB_SERVER <- 'xcmsonline-db2'#
+	DB_NAME <- 'xcmsonlineB'#
+	JOBID <- 1129676#
+	JOBID <- 1129671	#
+	JOBID <- 1129741#
+	require(RMySQL)
+source("/Users/xavidomingo/Desktop/online-packages/misa/R/misa.R")
+source("/Users/xavidomingo/Desktop/online-packages/misa/R/misa.R")

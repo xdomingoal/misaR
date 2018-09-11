@@ -1,0 +1,14 @@
+Package: misaR
+Type: Package
+Title: METLIN In-source Annotation
+Version: 0.1.0
+Date: 2018-09-10
+Author: Xavier Domingo-Almenara 
+Imports: RMySQL, DBI, Rcpp (>= 0.11.0)
+Maintainer: Xavier Domingo <xdomingo@scripps.edu>
+Description: In-source annotation based on low-energy in-source fragmentation.
+License: MIT + file LICENSE
+URL: http://xcmsonline.scripps.edu/
+LazyData: no
+NeedsCompilation: yes
+LinkingTo: Rcpp
