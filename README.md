@@ -4,6 +4,10 @@ This package is the source code of the MISA algorithm, a strategy to annotate in
 
 This repository containts the source code, and a small sample MySQL database, only for developers. Users are encouraged to use the online version of MISA available at http://xcmsonline.scripps.edu
 
+If you use the package MISA in your analysis and publications please cite:
+
+Domingo-Almenara, X., Montenegro-Burke, J. R., Guijas, C., Majumder, E. L-W., Benton, H. P., Siuzdak, G. Autonomous METLIN-guided in-source fragment detection increases annotation confidence in untargeted metabolomics. Analytical Chemistry 91 (2019) 3246–3253. DOI: 10.1021/acs.analchem.8b03126
+
 ## Getting Started
 
 ### Prerequisites
