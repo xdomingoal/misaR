@@ -6,7 +6,7 @@ This repository containts the source code, and a small sample MySQL database, on
 
 If you use the package MISA in your analysis and publications please cite:
 
-Domingo-Almenara, X., Montenegro-Burke, J. R., Guijas, C., Majumder, E. L-W., Benton, H. P., Siuzdak, G. Autonomous METLIN-guided in-source fragment detection increases annotation confidence in untargeted metabolomics. Analytical Chemistry 91 (2019) 3246–3253. DOI: 10.1021/acs.analchem.8b03126
+Domingo-Almenara, X., Montenegro-Burke, J. R., Guijas, C., Majumder, E. L-W., Benton, H. P., Siuzdak, G. Autonomous METLIN-Guided In-source Fragment Annotation for Untargeted Metabolomics. Analytical Chemistry 91 (2019) 3246–3253. DOI: 10.1021/acs.analchem.8b03126
 
 ## Getting Started
 
